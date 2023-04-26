@@ -1,5 +1,23 @@
 # nystudio107/spin-up-craft Change Log
 
+## 1.0.14 - 2023.04.25
+### Fixed
+* Wait not just for the database to be available, but also that the `info` table has been populated before proceeding with the `queue` container ([#2](https://github.com/nystudio107/spin-up-craft/issues/2))
+
+### Changed
+* Remove PHP platform version
+
+## 1.0.13 - 2023.03.30
+### Changed
+* Clean up the `Makefile` by using `docker compose` api
+* Fully switch from the old `docker-compose` api to the new `docker compose` api
+
+## 1.0.12 - 2023.03.23
+### Changed
+* Updated to `craftcms/cms` `^4.4.5`
+* Switch to `jbergstroem/mariadb-alpine` for the db container, for a much smaller image size, and a much faster startup time
+* Run `php craft up` and display the banner message only from the queue container
+
 ## 1.0.11 - 2023.03.02
 ### Fixed
 * Use a unique CSRF token name, to avoid issues with CSRF validation with multiple instances of Craft running on the same host (localhost)
